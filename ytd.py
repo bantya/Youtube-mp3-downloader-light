@@ -41,10 +41,10 @@ def download(song=None):
             print("There's some problem in your network")
             return none
 
-        command = 'youtube-dl --embed-thumbnail --no-warnings --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" ' + results[0]
+        command = 'youtube-dl --embed-thumbnail --no-warnings --extract-audio --audio-format mp3 -o "%USERPROFILE%\Downloads\%(title)s.%(ext)s" ' + results[0]
 
     else:
-        command = 'youtube-dl --embed-thumbnail --no-warnings --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" ' + song[song.find("=")+1:]
+        command = 'youtube-dl --embed-thumbnail --no-warnings --extract-audio --audio-format mp3 -o "%USERPROFILE%\Downloads\%(title)s.%(ext)s" ' + song[song.find("=")+1:]
         song = get_title(song)
         print(song)
 
